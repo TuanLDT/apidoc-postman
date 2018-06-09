@@ -1,0 +1,2008 @@
+"[
+  {
+    "type": "get",
+    "url": "/v1.0/api/contact/:_id",
+    "title": "Lấy thông tin contact",
+    "version": "1.0.0",
+    "name": "ContactInfo",
+    "group": "Contact",
+    "description": "<p>Lấy thông tin dựa trên _id</p> ",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "defaultValue": "200",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "SUCCESS",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Object chứa thông tin của contact</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    code: 200,\n    message: \"SUCCESS\",\n    data: {\n       \"_id\": \"5b196793ea4af70508ffed70\",\n       \"firstName\": \"Tuấn\",\n       \"lastName\": \"Lê\",\n       \"address\": \"Thanh Xuân\",\n       \"phoneNumbers\": [\n           \"0904725792\"\n       ],\n       \"emails\": [\n           \"thanhtuan@gmail.com\"\n       ],\n       \"gender\": \"male\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./example/api/v1.0/contact.js",
+    "groupTitle": "Contact",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080/v1.0/api/contact/:_id"
+      }
+    ]
+  },
+  {
+    "type": "post",
+    "url": "/v1.0/api/contact",
+    "title": "Tạo contact",
+    "version": "1.0.0",
+    "name": "CreateContact",
+    "group": "Contact",
+    "description": "<p>Tạo contact</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "firstName",
+            "description": "<p>Tên</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "lastName",
+            "description": "<p>Họ</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "address",
+            "description": "<p>Địa chỉ liên hệ</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "[String]",
+            "optional": true,
+            "field": "phoneNumbers",
+            "description": "<p>Mảng các số điện thoại</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "[String]",
+            "optional": true,
+            "field": "emails",
+            "description": "<p>Mảng các email</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "allowedValues": [
+              "\"male\"",
+              "\"female\""
+            ],
+            "optional": true,
+            "field": "gender",
+            "description": "<p>Giới tính</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "defaultValue": "200",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "SUCCESS",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Object chứa thông tin của contact vừa tạo</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"code\": 200,\n  \"message\": \"SUCCESS\",\n  \"data\": {\n      \"_id\": \"5b1967b2ea4af70508ffed71\",\n      \"firstName\": \"Giang\",\n      \"lastName\": \"Lê\",\n      \"address\": \"Sóc Sơn\",\n      \"phoneNumbers\": [\n          \"0904725791\"\n      ],\n      \"emails\": [\n          \"legiang@gmail.com\"\n      ],\n      \"gender\": \"male\"\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./example/api/v1.0/contact.js",
+    "groupTitle": "Contact",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080/v1.0/api/contact"
+      }
+    ]
+  },
+  {
+    "type": "delete",
+    "url": "/v1.0/api/contact/:_id",
+    "title": "Xóa contact",
+    "version": "1.0.0",
+    "name": "DeleteContact",
+    "group": "Contact",
+    "description": "<p>Xóa contact dựa trên _id</p> ",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "defaultValue": "200",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "SUCCESS",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"code\": 200,\n  \"message\": \"SUCCESS\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./example/api/v1.0/contact.js",
+    "groupTitle": "Contact",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080/v1.0/api/contact/:_id"
+      }
+    ]
+  },
+  {
+    "type": "put",
+    "url": "/v1.0/api/contact/:_id",
+    "title": "Sửa contact",
+    "version": "1.0.0",
+    "name": "EditContact",
+    "group": "Contact",
+    "description": "<p>Sửa thông tin dựa trên _id</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "firstName",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "lastName",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "address",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "[String]",
+            "optional": true,
+            "field": "phoneNumbers",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "[String]",
+            "optional": true,
+            "field": "emails",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "allowedValues": [
+              "\"male\"",
+              "\"female\""
+            ],
+            "optional": true,
+            "field": "gender",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "defaultValue": "200",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "SUCCESS",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Object chứa thông tin của contact đã sửa</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"code\": 200,\n  \"message\": \"SUCCESS\",\n  data: {\n       \"_id\": \"5b196793ea4af70508ffed70\",\n       \"firstName\": \"Tuấn\",\n       \"lastName\": \"Lê Đắc Thanh\",\n       \"address\": \"Thanh Xuân\",\n       \"phoneNumbers\": [\n           \"0904725792\",\n           \"0984665668\"\n       ],\n       \"emails\": [\n           \"thanhtuan@gmail.com\"\n       ],\n       \"gender\": \"male\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./example/api/v1.0/contact.js",
+    "groupTitle": "Contact",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080/v1.0/api/contact/:_id"
+      }
+    ]
+  },
+  {
+    "type": "get",
+    "url": "/v1.0/api/contact",
+    "title": "Danh sách contact",
+    "version": "1.0.0",
+    "name": "getListContact",
+    "group": "Contact",
+    "description": "<p>Lấy danh sách contact</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "page",
+            "defaultValue": "0",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "size",
+            "defaultValue": "20",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "firstName",
+            "description": "<p>Lọc contact theo tên</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "lastName",
+            "description": "<p>Lọc contact theo họ</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "address",
+            "description": "<p>Lọc contact theo địa chỉ khách hàng</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "allowedValues": [
+              "\"male\"",
+              "\"female\""
+            ],
+            "optional": true,
+            "field": "gender",
+            "description": "<p>Lọc contact theo giới tính</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "defaultValue": "200",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "SUCCESS",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Dữ liệu trả về khi lấy danh sách contact</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "data.count",
+            "description": "<p>Tổng số contact</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "Array",
+            "optional": false,
+            "field": "data.items",
+            "description": "<p>Mảng chứa các object gồm thông tin về contact</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    code: 200,\n    message: \"SUCCESS\",\n    data: {\n        \"count\": 2,\n        items: [\n            {\n                 \"_id\": \"5b1967b2ea4af70508ffed71\",\n                 \"firstName\": \"Giang\",\n                 \"lastName\": \"Lê\",\n                 \"address\": \"Sóc Sơn\",\n                 \"phoneNumbers\": [\n                     \"0904725791\"\n                 ],\n                 \"emails\": [\n                     \"legiang@gmail.com\"\n                 ],\n                 \"gender\": \"male\"\n             },\n             {\n                 \"_id\": \"5b196793ea4af70508ffed70\",\n                 \"firstName\": \"Tuấn\",\n                 \"lastName\": \"Lê\",\n                 \"address\": \"Thanh Xuân\",\n                 \"phoneNumbers\": [\n                     \"0904725792\"\n                 ],\n                 \"emails\": [\n                     \"thanhtuan@gmail.com\"\n                 ],\n                 \"gender\": \"male\"\n             },\n        ]\n        \n    }\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./example/api/v1.0/contact.js",
+    "groupTitle": "Contact",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080/v1.0/api/contact"
+      }
+    ]
+  },
+  {
+    "type": "post",
+    "url": "/v1.0/api/customer",
+    "title": "Tạo customer",
+    "version": "1.0.0",
+    "name": "CreateCustomer",
+    "group": "Customer",
+    "description": "<p>Tạo customer</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "code",
+            "description": "<p>Mã khách hàng</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "name",
+            "description": "<p>Tên khách hàng</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "address",
+            "description": "<p>Địa chỉ khách hàng</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "phoneNumber",
+            "description": "<p>Số điện thoại liên hệ</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "contact",
+            "description": "<p>Người liên hệ(id tham chiếu tới contact)</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "representative",
+            "description": "<p>Đại diện pháp nhân(id tham chiếu tới contact)</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "email",
+            "description": "<p>Email liên hệ</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "Object",
+            "optional": true,
+            "field": "attributes",
+            "description": "<p>Object lưu các thuộc tính</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "defaultValue": "200",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "SUCCESS",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Object chứa thông tin của customer vừa tạo</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"code\": 200,\n  \"message\": \"SUCCESS\",\n  \"data\": {\n      \"_id\": \"5b1756f16d52a31fa80278f1\",\n      \"name\": \"test 1\"\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./example/api/v1.0/customer.js",
+    "groupTitle": "Customer",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080/v1.0/api/customer"
+      }
+    ]
+  },
+  {
+    "type": "get",
+    "url": "/v1.0/api/customer/:_id",
+    "title": "Lấy thông tin customer",
+    "version": "1.0.0",
+    "name": "CustomerInfo",
+    "group": "Customer",
+    "description": "<p>Lấy thông tin dựa trên _id</p> ",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "defaultValue": "200",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "SUCCESS",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Object chứa thông tin của customer</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    code: 200,\n    message: \"SUCCESS\",\n    data: {\n       \"_id\": \"5b18b03dce7eeb3540fb42cb\",\n       \"code\": \"1\",\n       \"name\": \"Customer 1\",\n       \"address\": null,\n       \"phoneNumber\": null,\n       \"contact\": null,\n       \"representative\": null,\n       \"email\": null,\n       \"attributes\": {}\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./example/api/v1.0/customer.js",
+    "groupTitle": "Customer",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080/v1.0/api/customer/:_id"
+      }
+    ]
+  },
+  {
+    "type": "delete",
+    "url": "/v1.0/api/customer/:_id",
+    "title": "Xóa customer",
+    "version": "1.0.0",
+    "name": "DeleteCustomer",
+    "group": "Customer",
+    "description": "<p>Xóa customer dựa trên _id</p> ",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "defaultValue": "200",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "SUCCESS",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"code\": 200,\n  \"message\": \"SUCCESS\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./example/api/v1.0/customer.js",
+    "groupTitle": "Customer",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080/v1.0/api/customer/:_id"
+      }
+    ]
+  },
+  {
+    "type": "put",
+    "url": "/v1.0/api/customer/:_id",
+    "title": "Sửa customer",
+    "version": "1.0.0",
+    "name": "EditCustomer",
+    "group": "Customer",
+    "description": "<p>Sửa thông tin dựa trên _id</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "name",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "address",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "phoneNumber",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "contact",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "representative",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "email",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "attributes",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "defaultValue": "200",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "SUCCESS",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Object chứa thông tin của customer đã sửa</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"code\": 200,\n  \"message\": \"SUCCESS\",\n  data: {\n       \"_id\": \"5b18b03dce7eeb3540fb42cb\",\n       \"code\": \"1\",\n       \"name\": \"Edit name\",\n       \"address\": null,\n       \"phoneNumber\": null,\n       \"contact\": null,\n       \"representative\": null,\n       \"email\": null,\n       \"attributes\": {}\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./example/api/v1.0/customer.js",
+    "groupTitle": "Customer",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080/v1.0/api/customer/:_id"
+      }
+    ]
+  },
+  {
+    "type": "get",
+    "url": "/v1.0/api/customer",
+    "title": "Danh sách customer",
+    "version": "1.0.0",
+    "name": "getListCustomer",
+    "group": "Customer",
+    "description": "<p>Lấy danh sách customer</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "page",
+            "defaultValue": "0",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "size",
+            "defaultValue": "20",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "code",
+            "description": "<p>Lọc customer theo code</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "name",
+            "description": "<p>Lọc customer theo name</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "address",
+            "description": "<p>Lọc customer theo address</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "phoneNumber",
+            "description": "<p>Lọc customer theo phoneNumber</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "email",
+            "description": "<p>Lọc customer theo email</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "defaultValue": "200",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "SUCCESS",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Dữ liệu trả về khi lấy danh sách customer</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "data.count",
+            "description": "<p>Tổng số customer</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "Array",
+            "optional": false,
+            "field": "data.items",
+            "description": "<p>Mảng chứa các object gồm thông tin về customer</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    code: 200,\n    message: \"SUCCESS\",\n    data: {\n        \"count\": 2,\n        items: [\n            {\n                 \"_id\": \"5b18b03dce7eeb3540fb42cb\",\n                 \"code\": \"1\",\n                 \"name\": \"Customer 1\",\n                 \"address\": null,\n                 \"phoneNumber\": null,\n                 \"contact\": null,\n                 \"representative\": null,\n                 \"email\": null,\n                 \"attributes\": {}\n            },{\n                 \"_id\": \"5b194bbac2df7405600ae719\",\n                 \"code\": \"2\",\n                 \"name\": \"Customer 2\",\n                 \"address\": \"Thanh Xuân\",\n                 \"phoneNumber\": \"0904725791\",\n                 \"contact\": null,\n                 \"representative\": null,\n                 \"email\": \"thanhtuan.pfiev@gmail.com\",\n                 \"attributes\": {}\n            }\n        ]\n        \n    }\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./example/api/v1.0/customer.js",
+    "groupTitle": "Customer",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080/v1.0/api/customer"
+      }
+    ]
+  },
+  {
+    "type": "",
+    "url": "private",
+    "title": "",
+    "version": "0.0.0",
+    "filename": "./node_modules/isarray/build/build.js",
+    "group": "D__Code_etc_etcD_GatewayAPI_apidoc_swagger_node_modules_isarray_build_build_js",
+    "groupTitle": "D__Code_etc_etcD_GatewayAPI_apidoc_swagger_node_modules_isarray_build_build_js",
+    "name": "Private",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080private"
+      }
+    ]
+  },
+  {
+    "type": "",
+    "url": "private",
+    "title": "",
+    "version": "0.0.0",
+    "filename": "./node_modules/isarray/build/build.js",
+    "group": "D__Code_etc_etcD_GatewayAPI_apidoc_swagger_node_modules_isarray_build_build_js",
+    "groupTitle": "D__Code_etc_etcD_GatewayAPI_apidoc_swagger_node_modules_isarray_build_build_js",
+    "name": "Private",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080private"
+      }
+    ]
+  },
+  {
+    "type": "",
+    "url": "private",
+    "title": "",
+    "version": "0.0.0",
+    "filename": "./node_modules/isarray/build/build.js",
+    "group": "D__Code_etc_etcD_GatewayAPI_apidoc_swagger_node_modules_isarray_build_build_js",
+    "groupTitle": "D__Code_etc_etcD_GatewayAPI_apidoc_swagger_node_modules_isarray_build_build_js",
+    "name": "Private",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080private"
+      }
+    ]
+  },
+  {
+    "type": "",
+    "url": "private",
+    "title": "",
+    "version": "0.0.0",
+    "filename": "./node_modules/isarray/build/build.js",
+    "group": "D__Code_etc_etcD_GatewayAPI_apidoc_swagger_node_modules_isarray_build_build_js",
+    "groupTitle": "D__Code_etc_etcD_GatewayAPI_apidoc_swagger_node_modules_isarray_build_build_js",
+    "name": "Private",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080private"
+      }
+    ]
+  },
+  {
+    "type": "",
+    "url": "private",
+    "title": "",
+    "version": "0.0.0",
+    "filename": "./node_modules/isarray/build/build.js",
+    "group": "D__Code_etc_etcD_GatewayAPI_apidoc_swagger_node_modules_isarray_build_build_js",
+    "groupTitle": "D__Code_etc_etcD_GatewayAPI_apidoc_swagger_node_modules_isarray_build_build_js",
+    "name": "Private",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080private"
+      }
+    ]
+  },
+  {
+    "type": "",
+    "url": "public",
+    "title": "",
+    "version": "0.0.0",
+    "filename": "./node_modules/isarray/build/build.js",
+    "group": "D__Code_etc_etcD_GatewayAPI_apidoc_swagger_node_modules_isarray_build_build_js",
+    "groupTitle": "D__Code_etc_etcD_GatewayAPI_apidoc_swagger_node_modules_isarray_build_build_js",
+    "name": "Public",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080public"
+      }
+    ]
+  },
+  {
+    "type": "post",
+    "url": "/v1.0/api/example",
+    "title": "Tạo example",
+    "version": "1.0.0",
+    "name": "CreateExample",
+    "group": "Example",
+    "description": "<p>Tạo example</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Tên của example</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "defaultValue": "200",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "SUCCESS",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Object chứa thông tin của example vừa tạo</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"code\": 200,\n  \"message\": \"SUCCESS\",\n  \"data\": {\n      \"_id\": \"5b1756f16d52a31fa80278f1\",\n      \"name\": \"test 1\"\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./example/api/v1.0/example.js",
+    "groupTitle": "Example",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080/v1.0/api/example"
+      }
+    ]
+  },
+  {
+    "type": "delete",
+    "url": "/v1.0/api/example/:_id",
+    "title": "Xóa example",
+    "version": "1.0.0",
+    "name": "DeleteExample",
+    "group": "Example",
+    "description": "<p>Xóa example dựa trên _id</p> ",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "defaultValue": "200",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "SUCCESS",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"code\": 200,\n  \"message\": \"SUCCESS\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./example/api/v1.0/example.js",
+    "groupTitle": "Example",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080/v1.0/api/example/:_id"
+      }
+    ]
+  },
+  {
+    "type": "put",
+    "url": "/v1.0/api/example/:_id",
+    "title": "Sửa example",
+    "version": "1.0.0",
+    "name": "EditExample",
+    "group": "Example",
+    "description": "<p>Sửa thông tin dựa trên _id</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "name",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "defaultValue": "200",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "SUCCESS",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Object chứa thông tin của example đã sửa</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"code\": 200,\n  \"message\": \"SUCCESS\",\n  \"data\": {\n      \"_id\": \"5b17660a170a9901ac5879be\",\n      \"name\": \"test edit\"\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./example/api/v1.0/example.js",
+    "groupTitle": "Example",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080/v1.0/api/example/:_id"
+      }
+    ]
+  },
+  {
+    "type": "get",
+    "url": "/v1.0/api/example/:_id",
+    "title": "Lấy thông tin example",
+    "version": "1.0.0",
+    "name": "ExampleInfo",
+    "group": "Example",
+    "description": "<p>Lấy thông tin dựa trên _id</p> ",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "defaultValue": "200",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "SUCCESS",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Object chứa thông tin của example</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    code: 200,\n    message: \"SUCCESS\",\n    data: {\n        \"_id\": \"5a68299aa061533ca4af1be7\",\n        \"name\": \"example 1\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./example/api/v1.0/example.js",
+    "groupTitle": "Example",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080/v1.0/api/example/:_id"
+      }
+    ]
+  },
+  {
+    "type": "get",
+    "url": "/v1.0/api/example",
+    "title": "Danh sách example",
+    "version": "1.0.0",
+    "name": "getListExample",
+    "group": "Example",
+    "description": "<p>Lấy danh sách example</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "page",
+            "defaultValue": "0",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "size",
+            "defaultValue": "20",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "name",
+            "description": "<p>Lọc các example theo name</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "defaultValue": "200",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "SUCCESS",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Dữ liệu trả về khi lấy danh sách example</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "data.count",
+            "description": "<p>Tổng số example</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "Array",
+            "optional": false,
+            "field": "data.items",
+            "description": "<p>Mảng chứa các object gồm thông tin về example</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    code: 200,\n    message: \"SUCCESS\",\n    data: {\n        count: 3,\n        items: [\n            {\n                 \"_id\": \"5b17654f6984452a243c632e\",\n                 \"_id\": \"ex 1\",\n            },{\n                 \"_id\": \"5b1765516984452a243c632f\",\n                 \"_id\": \"ex 2\",\n            },{\n                 \"_id\": \"5b1767cfa8255412c89fdb8f\",\n                 \"_id\": \"ex 3\",\n            }\n        ]\n        \n    }\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./example/api/v1.0/example.js",
+    "groupTitle": "Example",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080/v1.0/api/example"
+      }
+    ]
+  },
+  {
+    "type": "post",
+    "url": "/v1.0/api/package",
+    "title": "Tạo package",
+    "version": "1.0.0",
+    "name": "CreatePackage",
+    "group": "Package",
+    "description": "<p>Tạo package</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "code",
+            "description": "<p>Mã gói dịch vụ</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Tên gói dịch vụ</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "service",
+            "description": "<p>Dịch vụ</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "Object",
+            "optional": true,
+            "field": "attributes",
+            "description": "<p>Các thuộc tính của gói dịch vụ</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "defaultValue": "200",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "SUCCESS",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Object chứa thông tin của package vừa tạo</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"code\": 200,\n  \"message\": \"SUCCESS\",\n  \"data\": {\n      \"_id\": \"5b197e77670ac619907d14f8\",\n      \"code\": \"2\",\n      \"name\": \"package 2\",\n      \"service\": \"5b1977c2132f3817248aa82b\",\n      \"attributes\": {}\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./example/api/v1.0/package.js",
+    "groupTitle": "Package",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080/v1.0/api/package"
+      }
+    ]
+  },
+  {
+    "type": "delete",
+    "url": "/v1.0/api/package/:_id",
+    "title": "Xóa package",
+    "version": "1.0.0",
+    "name": "DeletePackage",
+    "group": "Package",
+    "description": "<p>Xóa package dựa trên _id</p> ",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "defaultValue": "200",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "SUCCESS",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"code\": 200,\n  \"message\": \"SUCCESS\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./example/api/v1.0/package.js",
+    "groupTitle": "Package",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080/v1.0/api/package/:_id"
+      }
+    ]
+  },
+  {
+    "type": "put",
+    "url": "/v1.0/api/package/:_id",
+    "title": "Sửa package",
+    "version": "1.0.0",
+    "name": "EditPackage",
+    "group": "Package",
+    "description": "<p>Sửa thông tin dựa trên _id</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "name",
+            "description": "<p>Tên gói dịch vụ</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "service",
+            "description": "<p>Dịch vụ</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "Object",
+            "optional": true,
+            "field": "attributes",
+            "description": "<p>Các thuộc tính của gói dịch vụ</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "defaultValue": "200",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "SUCCESS",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Object chứa thông tin của package đã sửa</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"code\": 200,\n  \"message\": \"SUCCESS\",\n  \"data\": {\n      \"_id\": \"5b197e77670ac619907d14f8\",\n      \"code\": \"2\",\n      \"name\": \"Gói dịch vụ 2\",\n      \"service\": \"5b1977c2132f3817248aa82b\",\n      \"attributes\": {}\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./example/api/v1.0/package.js",
+    "groupTitle": "Package",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080/v1.0/api/package/:_id"
+      }
+    ]
+  },
+  {
+    "type": "get",
+    "url": "/v1.0/api/package/:_id",
+    "title": "Lấy thông tin package",
+    "version": "1.0.0",
+    "name": "PackageInfo",
+    "group": "Package",
+    "description": "<p>Lấy thông tin dựa trên _id</p> ",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "defaultValue": "200",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "SUCCESS",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Object chứa thông tin của package</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    code: 200,\n    message: \"SUCCESS\",\n    \"data\": {\n         \"_id\": \"5b1977c2132f3817248aa82b\",\n         \"code\": \"1\",\n         \"name\": \"dịch vụ 1\",\n         \"description\": \"Dịch vụ 1\",\n         \"attributes\": {}\n     }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./example/api/v1.0/package.js",
+    "groupTitle": "Package",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080/v1.0/api/package/:_id"
+      }
+    ]
+  },
+  {
+    "type": "get",
+    "url": "/v1.0/api/package",
+    "title": "Danh sách package",
+    "version": "1.0.0",
+    "name": "getListPackage",
+    "group": "Package",
+    "description": "<p>Lấy danh sách package</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "page",
+            "defaultValue": "0",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "size",
+            "defaultValue": "20",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "code",
+            "description": "<p>Lọc package theo code</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "name",
+            "description": "<p>Lọc package theo tên</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "defaultValue": "200",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "SUCCESS",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Dữ liệu trả về khi lấy danh sách package</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "data.count",
+            "description": "<p>Tổng số package</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "Array",
+            "optional": false,
+            "field": "data.items",
+            "description": "<p>Mảng chứa các object gồm thông tin về package</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    code: 200,\n    message: \"SUCCESS\",\n    data: {\n        \"count\": 2,\n        items: [\n            {\n                 \"_id\": \"5b197e64670ac619907d14f7\",\n                 \"code\": \"1\",\n                 \"name\": \"Gói dịch vụ 1\",\n                 \"service\": null,\n                 \"attributes\": {}\n             },\n             {\n                 \"_id\": \"5b197e77670ac619907d14f8\",\n                 \"code\": \"2\",\n                 \"name\": \"Gói dịch vụ 2\",\n                 \"service\": \"5b1977c2132f3817248aa82b\",\n                 \"attributes\": {}\n             },\n        ]\n        \n    }\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./example/api/v1.0/package.js",
+    "groupTitle": "Package",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080/v1.0/api/package"
+      }
+    ]
+  },
+  {
+    "type": "post",
+    "url": "/v1.0/api/service",
+    "title": "Tạo service",
+    "version": "1.0.0",
+    "name": "CreateService",
+    "group": "Service",
+    "description": "<p>Tạo service</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "code",
+            "description": "<p>Mã dịch vụ</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "name",
+            "description": "<p>Tên dịch vụ</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "description",
+            "description": "<p>Mô tả dịch vụ</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "Object",
+            "optional": true,
+            "field": "attributes",
+            "description": "<p>Các thuộc tính của dịch vụ</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "defaultValue": "200",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "SUCCESS",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Object chứa thông tin của service vừa tạo</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"code\": 200,\n  \"message\": \"SUCCESS\",\n  \"data\": {\n      \"_id\": \"5b1977c2132f3817248aa82b\",\n      \"code\": \"1\",\n      \"name\": \"service 1\",\n      \"description\": \"\",\n      \"attributes\": {}\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./example/api/v1.0/service.js",
+    "groupTitle": "Service",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080/v1.0/api/service"
+      }
+    ]
+  },
+  {
+    "type": "delete",
+    "url": "/v1.0/api/service/:_id",
+    "title": "Xóa service",
+    "version": "1.0.0",
+    "name": "DeleteService",
+    "group": "Service",
+    "description": "<p>Xóa service dựa trên _id</p> ",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "defaultValue": "200",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "SUCCESS",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"code\": 200,\n  \"message\": \"SUCCESS\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./example/api/v1.0/service.js",
+    "groupTitle": "Service",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080/v1.0/api/service/:_id"
+      }
+    ]
+  },
+  {
+    "type": "put",
+    "url": "/v1.0/api/service/:_id",
+    "title": "Sửa service",
+    "version": "1.0.0",
+    "name": "EditService",
+    "group": "Service",
+    "description": "<p>Sửa thông tin dựa trên _id</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "name",
+            "description": "<p>Tên dịch vụ</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "description",
+            "description": "<p>Mô tả dịch vụ</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "Object",
+            "optional": true,
+            "field": "attributes",
+            "description": "<p>Các thuộc tính của dịch vụ</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "defaultValue": "200",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "SUCCESS",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Object chứa thông tin của service đã sửa</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"code\": 200,\n  \"message\": \"SUCCESS\",\n  \"data\": {\n      \"_id\": \"5b1977c2132f3817248aa82b\",\n      \"code\": \"1\",\n      \"name\": \"dịch vụ 1\",\n      \"description\": \"Dịch vụ 1\",\n      \"attributes\": {}\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./example/api/v1.0/service.js",
+    "groupTitle": "Service",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080/v1.0/api/service/:_id"
+      }
+    ]
+  },
+  {
+    "type": "get",
+    "url": "/v1.0/api/service/:_id",
+    "title": "Lấy thông tin service",
+    "version": "1.0.0",
+    "name": "ServiceInfo",
+    "group": "Service",
+    "description": "<p>Lấy thông tin dựa trên _id</p> ",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "defaultValue": "200",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "SUCCESS",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Object chứa thông tin của service</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    code: 200,\n    message: \"SUCCESS\",\n    \"data\": {\n         \"_id\": \"5b1977c2132f3817248aa82b\",\n         \"code\": \"1\",\n         \"name\": \"dịch vụ 1\",\n         \"description\": \"Dịch vụ 1\",\n         \"attributes\": {}\n     }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./example/api/v1.0/service.js",
+    "groupTitle": "Service",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080/v1.0/api/service/:_id"
+      }
+    ]
+  },
+  {
+    "type": "get",
+    "url": "/v1.0/api/service",
+    "title": "Danh sách service",
+    "version": "1.0.0",
+    "name": "getListService",
+    "group": "Service",
+    "description": "<p>Lấy danh sách service</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "page",
+            "defaultValue": "0",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "size",
+            "defaultValue": "20",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "code",
+            "description": "<p>Lọc service theo code</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "name",
+            "description": "<p>Lọc service theo tên</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "defaultValue": "200",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "SUCCESS",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Dữ liệu trả về khi lấy danh sách service</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "data.count",
+            "description": "<p>Tổng số service</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "Array",
+            "optional": false,
+            "field": "data.items",
+            "description": "<p>Mảng chứa các object gồm thông tin về service</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    code: 200,\n    message: \"SUCCESS\",\n    data: {\n        \"count\": 2,\n        items: [\n            {\n                 \"_id\": \"5b1977c2132f3817248aa82b\",\n                 \"code\": \"1\",\n                 \"name\": \"dịch vụ 1\",\n                 \"description\": \"Dịch vụ 1\",\n                 \"attributes\": {}\n             },\n             {\n                 \"_id\": \"5b197861132f3817248aa82c\",\n                 \"code\": \"2\",\n                 \"name\": \"dịch vụ 2\",\n                 \"description\": \"Dịch vụ 2\",\n                 \"attributes\": {}\n             },\n        ]\n        \n    }\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./example/api/v1.0/service.js",
+    "groupTitle": "Service",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080/v1.0/api/service"
+      }
+    ]
+  }
+]"

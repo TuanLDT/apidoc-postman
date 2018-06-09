@@ -1,0 +1,11 @@
+{
+  "name": "API DOC",
+  "version": "1.0.0",
+  "description": "API DOC",
+  "title": "API DOC",
+  "url" : "http://localhost:8080",
+  "sampleUrl": "http://localhost:8080",
+  "header": {
+  	"title": "API"
+  }
+}
