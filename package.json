@@ -1,6 +1,6 @@
 {
   "name": "apidoc-postman",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "apidoc to postman collection",
   "main": "index.js",
   "scripts": {
@@ -14,6 +14,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/TuanLDT/apidoc-postman.git"
+  },
+  "main": "./bin/apidoc-postman.js",
+  "bin": {
+    "apidoc-postman": "./bin/apidoc-postman.js"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
