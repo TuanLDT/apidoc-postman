@@ -3,3 +3,9 @@
 /example/
 /node_modules/
 /src/
+apidoc.json
+package-lock.json
+.babelrc
+.editorconfig
+.eslintignore
+.eslintrc

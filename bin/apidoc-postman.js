@@ -10,7 +10,7 @@ var pathToRegexp = _interopDefault(require('path-to-regexp'));
 var upperCase = _interopDefault(require('upper-case'));
 var tableify = _interopDefault(require('html-tableify'));
 var apidoc = _interopDefault(require('apidoc-core'));
-var winston = _interopDefault(require('winston'));
+var winston = require('winston');
 var markdown = _interopDefault(require('marked'));
 var fs$1 = _interopDefault(require('fs-extra'));
 var nomnom = _interopDefault(require('nomnom'));
@@ -314,7 +314,8 @@ function apidocToPostman(options) {
             prettyPrint: true,
             colorize: app.options.colorize,
             timestamp: false
-        })]
+        })],
+        exitOnError: false
     });
 
     // markdown
@@ -338,7 +339,6 @@ function apidocToPostman(options) {
         apidoc.setMarkdownParser(app.markdown);
         apidoc.setPackageInfos(packageInfo.get());
 
-        console.log(app.options);
         api = apidoc.parse(app.options);
 
         if (api === true) {

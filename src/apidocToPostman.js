@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import apidoc from 'apidoc-core';
-import winston from 'winston';
+import {transports, Logger}  from 'winston';
 import path from 'path';
 import markdown from 'marked';
 import fs from 'fs-extra';
@@ -58,16 +58,17 @@ function apidocToPostman(options) {
     app.options = options;
 
     // logger
-    app.log = new (winston.Logger)({
+    app.log = new Logger({
         transports: [
-            new (winston.transports.Console)({
+            new transports.Console({
                 level      : app.options.debug ? 'debug' : app.options.verbose ? 'verbose' : 'info',
                 silent     : app.options.silent,
                 prettyPrint: true,
                 colorize   : app.options.colorize,
                 timestamp  : false
-            }),
-        ]
+            })
+        ],
+        exitOnError: false
     });
 
     // markdown
@@ -91,7 +92,6 @@ function apidocToPostman(options) {
         apidoc.setMarkdownParser(app.markdown);
         apidoc.setPackageInfos(packageInfo.get());
 
-        console.log(app.options);
         api = apidoc.parse(app.options);
 
         if (api === true) {
