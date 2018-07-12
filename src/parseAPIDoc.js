@@ -47,7 +47,7 @@ class ParseAPIDoc {
 
         // Surrounds URL parameters with curly brackets -> :email with {email}
         var pathKeys = [];
-        for (var j = 1; j < matches.length; j++) {
+        for (var j = 1; matches && j < matches.length; j++) {
             var key = matches[j].substr(1);
             url = url.replace(matches[j], '{'+ key +'}');
             pathKeys.push(key);

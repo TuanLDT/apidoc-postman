@@ -155,7 +155,7 @@ var ParseAPIDoc = function () {
         var url = api.url;
         var pattern = pathToRegexp(url, null);
         var matches = pattern.exec(url);
-        for (var j = 1; j < matches.length; j++) {
+        for (var j = 1; matches && j < matches.length; j++) {
             var key = matches[j].substr(1);
             url = url.replace(matches[j], '{' + key + '}');
         }
